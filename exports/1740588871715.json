@@ -1,0 +1,37 @@
+{
+  "timestamp": 1740588871715,
+  "operation": {
+    "id": "webapp:react:views",
+    "refs": {
+      "id": "UV_PresentationMode",
+      "version": "1740588768604"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/components/views/UV_PresentationMode.tsx",
+      "type": "text",
+      "size": 242,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_PresentationMode/empty.tsx",
+      "type": "text",
+      "size": 415,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_PresentationMode/1740588768604.tsx",
+      "type": "text",
+      "size": 4945,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_PresentationMode/meta.json",
+      "type": "text",
+      "size": 83,
+      "dependencies": false
+    }
+  ]
+}

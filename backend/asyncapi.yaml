@@ -1,0 +1,216 @@
+asyncapi: 2.0.0
+info:
+  title: AI SaaS UI Design Platform - Realtime API
+  version: 1.0.0
+  description: This AsyncAPI specification covers the real-time events for
+    collaboration, comments, notifications, and project updates in the AI SaaS
+    UI Design Platform.
+servers:
+  development:
+    url: http://localhost:1337
+    protocol: ws
+    description: WebSocket development server
+channels:
+  project_updates:
+    description: Channel for real-time project updates, including UI modifications.
+    subscribe:
+      summary: Subscribe to project updates
+      operationId: subscribeProjectUpdates
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/ProjectUpdateEvent"
+    publish:
+      summary: Publish project updates
+      operationId: publishProjectUpdates
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/ProjectUpdateEvent"
+  user_presence:
+    description: Channel for tracking online collaborators and cursor movements.
+    subscribe:
+      summary: Subscribe to user presence updates
+      operationId: subscribeUserPresence
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/UserPresenceEvent"
+    publish:
+      summary: Publish user presence updates
+      operationId: publishUserPresence
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/UserPresenceEvent"
+  new_comment:
+    description: Real-time comments and feedback system.
+    subscribe:
+      summary: Subscribe to new comments on UI elements
+      operationId: subscribeNewComment
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/NewCommentEvent"
+    publish:
+      summary: Publish new comments
+      operationId: publishNewComment
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/NewCommentEvent"
+  notification_updates:
+    description: Real-time notifications for project activities and mentions.
+    subscribe:
+      summary: Subscribe to notification events
+      operationId: subscribeNotificationUpdates
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/NotificationEvent"
+    publish:
+      summary: Publish notification events
+      operationId: publishNotificationUpdates
+      message:
+        contentType: application/json
+        payload:
+          $ref: "#/components/schemas/NotificationEvent"
+components:
+  schemas:
+    ProjectUpdateEvent:
+      type: object
+      required:
+        - event
+        - project_id
+        - change
+      properties:
+        event:
+          type: string
+          enum:
+            - project_update
+          description: Event type identifier
+        project_id:
+          type: string
+          description: Unique identifier of the project being updated
+        change:
+          type: object
+          required:
+            - element_id
+            - new_state
+          properties:
+            element_id:
+              type: string
+              description: Identifier of the UI element that was modified
+            new_state:
+              type: object
+              description: The updated state of the UI element
+    UserPresenceEvent:
+      type: object
+      required:
+        - event
+        - project_id
+        - user_id
+        - status
+      properties:
+        event:
+          type: string
+          enum:
+            - user_presence
+          description: Event type identifier
+        project_id:
+          type: string
+          description: Unique identifier of the project where the user is active
+        user_id:
+          type: string
+          description: The user triggering the presence update
+        status:
+          type: string
+          enum:
+            - online
+            - offline
+            - active
+            - idle
+          description: User's current presence status
+        cursor_position:
+          type: object
+          nullable: true
+          description: Cursor position in the UI editor (if applicable)
+          properties:
+            x:
+              type: number
+            y:
+              type: number
+    NewCommentEvent:
+      type: object
+      required:
+        - event
+        - project_id
+        - comment
+      properties:
+        event:
+          type: string
+          enum:
+            - new_comment
+          description: Event type identifier
+        project_id:
+          type: string
+          description: The project where the comment was added
+        comment:
+          type: object
+          required:
+            - comment_id
+            - user_id
+            - content
+            - element_id
+          properties:
+            comment_id:
+              type: string
+              description: Unique identifier for the comment
+            user_id:
+              type: string
+              description: The user who added the comment
+            content:
+              type: string
+              description: The actual comment message
+            element_id:
+              type: string
+              description: The UI element to which the comment is attached
+            resolved:
+              type: boolean
+              default: false
+              description: Whether the comment has been resolved
+    NotificationEvent:
+      type: object
+      required:
+        - event
+        - user_id
+        - notification_type
+        - message
+      properties:
+        event:
+          type: string
+          enum:
+            - notification_update
+          description: Event type identifier
+        user_id:
+          type: string
+          description: The user receiving the notification
+        notification_type:
+          type: string
+          enum:
+            - mention
+            - project_update
+            - comment
+            - general
+          description: Type of notification
+        message:
+          type: string
+          description: Notification message
+        related_project_id:
+          type: string
+          nullable: true
+          description: Associated project ID if applicable
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of when the event occurred

@@ -1,0 +1,15 @@
+{
+  "timestamp": 1740587943320,
+  "operation": {
+    "id": "backend:specifications:asyncapi"
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/backend/asyncapi.yaml",
+      "type": "text",
+      "size": 6368,
+      "dependencies": false
+    }
+  ]
+}

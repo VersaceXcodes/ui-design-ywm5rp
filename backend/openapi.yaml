@@ -1,0 +1,238 @@
+openapi: 3.0.0
+info:
+  title: AI SaaS UI Design Platform API
+  description: API for user authentication, project management, collaboration, and
+    AI-powered design assistance.
+  version: 1.0.0
+servers:
+  - url: http://localhost:1337
+    description: Development server
+paths:
+  /api/auth/signup:
+    post:
+      summary: User Signup
+      operationId: signupUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SignupRequest"
+      responses:
+        "201":
+          description: User successfully registered
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+  /api/auth/login:
+    post:
+      summary: User Login
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+      responses:
+        "200":
+          description: Successful login response with token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+  /api/auth/logout:
+    post:
+      summary: User Logout
+      operationId: logoutUser
+      security:
+        - bearerAuth: []
+      responses:
+        "204":
+          description: Logout successful
+  /api/auth/reset-password:
+    post:
+      summary: Password Reset Request
+      operationId: resetPassword
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ResetPasswordRequest"
+      responses:
+        "200":
+          description: Reset email sent successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SuccessMessage"
+  /api/projects:
+    post:
+      summary: Create a new project
+      operationId: createProject
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateProjectRequest"
+      responses:
+        "201":
+          description: Project successfully created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+    get:
+      summary: List all user projects
+      operationId: listProjects
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Project"
+  /api/projects/{project_id}:
+    get:
+      summary: Get project details
+      operationId: getProject
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/project_id"
+      responses:
+        "200":
+          description: Project details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
+  /api/projects/{project_id}/pages/{page_id}/elements:
+    post:
+      summary: Add a UI element to a project page
+      operationId: addElement
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/project_id"
+        - $ref: "#/components/parameters/page_id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddElementRequest"
+      responses:
+        "201":
+          description: UI element successfully added
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UIElement"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    project_id:
+      name: project_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Unique identifier for the project
+    page_id:
+      name: page_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Unique identifier for the page
+  schemas:
+    SignupRequest:
+      type: object
+      required:
+        - email
+        - password
+        - name
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        name:
+          type: string
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    AuthResponse:
+      type: object
+      properties:
+        user_id:
+          type: string
+        token:
+          type: string
+    ResetPasswordRequest:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: string
+    SuccessMessage:
+      type: object
+      properties:
+        message:
+          type: string
+    CreateProjectRequest:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+    Project:
+      type: object
+      properties:
+        project_id:
+          type: string
+        name:
+          type: string
+        owner_user_id:
+          type: string
+    AddElementRequest:
+      type: object
+      required:
+        - element_data
+      properties:
+        element_data:
+          type: object
+    UIElement:
+      type: object
+      properties:
+        element_id:
+          type: string
+        project_id:
+          type: string
+        page_id:
+          type: string
+        element_data:
+          type: object

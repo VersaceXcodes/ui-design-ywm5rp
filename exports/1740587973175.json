@@ -1,0 +1,21 @@
+{
+  "timestamp": 1740587973175,
+  "operation": {
+    "id": "settings:config:package"
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/backend/package.json",
+      "type": "text",
+      "size": 804,
+      "dependencies": true
+    },
+    {
+      "path": "../../apps/ui-design/backend/.env",
+      "type": "text",
+      "size": 165,
+      "dependencies": false
+    }
+  ]
+}

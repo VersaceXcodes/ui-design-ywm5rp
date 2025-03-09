@@ -1,0 +1,15 @@
+{
+  "timestamp": 1740588275397,
+  "operation": {
+    "id": "settings:config:package"
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/package.json",
+      "type": "text",
+      "size": 2958,
+      "dependencies": true
+    }
+  ]
+}

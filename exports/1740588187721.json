@@ -1,0 +1,37 @@
+{
+  "timestamp": 1740588187721,
+  "operation": {
+    "id": "webapp:react:views",
+    "refs": {
+      "id": "UV_ProjectDetails",
+      "version": "latest"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/components/views/UV_ProjectDetails.tsx",
+      "type": "text",
+      "size": 240,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_ProjectDetails/empty.tsx",
+      "type": "text",
+      "size": 409,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_ProjectDetails/latest.tsx",
+      "type": "text",
+      "size": 6014,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_ProjectDetails/meta.json",
+      "type": "text",
+      "size": 53,
+      "dependencies": false
+    }
+  ]
+}

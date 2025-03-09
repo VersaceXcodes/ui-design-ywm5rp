@@ -1,0 +1,15 @@
+{
+  "timestamp": 1741209397968,
+  "operation": {
+    "id": "settings:preferences:versions"
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/GV_NotificationsPanel/meta.json",
+      "type": "text",
+      "size": 67,
+      "dependencies": false
+    }
+  ]
+}

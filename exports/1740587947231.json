@@ -1,0 +1,15 @@
+{
+  "timestamp": 1740587947231,
+  "operation": {
+    "id": "backend:specifications:openapi"
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/backend/openapi.yaml",
+      "type": "text",
+      "size": 5800,
+      "dependencies": false
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "timestamp": 1740588146484,
+  "operation": {
+    "id": "webapp:react:views",
+    "refs": {
+      "id": "UV_PasswordReset",
+      "version": "1740588096270"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/components/views/UV_PasswordReset.tsx",
+      "type": "text",
+      "size": 239,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_PasswordReset/empty.tsx",
+      "type": "text",
+      "size": 406,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_PasswordReset/1740588096270.tsx",
+      "type": "text",
+      "size": 3033,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_PasswordReset/meta.json",
+      "type": "text",
+      "size": 53,
+      "dependencies": false
+    }
+  ]
+}

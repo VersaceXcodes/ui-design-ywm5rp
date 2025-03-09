@@ -1,0 +1,37 @@
+{
+  "timestamp": 1740588908359,
+  "operation": {
+    "id": "webapp:react:views",
+    "refs": {
+      "id": "GV_SidebarNavigation",
+      "version": "latest"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/components/views/GV_SidebarNavigation.tsx",
+      "type": "text",
+      "size": 243,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/GV_SidebarNavigation/empty.tsx",
+      "type": "text",
+      "size": 418,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/GV_SidebarNavigation/latest.tsx",
+      "type": "text",
+      "size": 3120,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/GV_SidebarNavigation/meta.json",
+      "type": "text",
+      "size": 83,
+      "dependencies": false
+    }
+  ]
+}

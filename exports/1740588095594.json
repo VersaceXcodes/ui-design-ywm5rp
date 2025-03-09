@@ -1,0 +1,25 @@
+{
+  "timestamp": 1740588095594,
+  "operation": {
+    "id": "webapp:react:root",
+    "refs": {
+      "id": "app",
+      "version": "latest"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/App.tsx",
+      "type": "text",
+      "size": 3607,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/meta.json",
+      "type": "text",
+      "size": 23,
+      "dependencies": false
+    }
+  ]
+}

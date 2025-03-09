@@ -1,0 +1,19 @@
+{
+  "timestamp": 1740588061514,
+  "operation": {
+    "id": "webapp:react:store",
+    "refs": {
+      "id": "redux",
+      "version": "1740588042530"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/store/main.tsx",
+      "type": "text",
+      "size": 3613,
+      "dependencies": false
+    }
+  ]
+}

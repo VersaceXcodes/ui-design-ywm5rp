@@ -1,0 +1,37 @@
+{
+  "timestamp": 1740588806315,
+  "operation": {
+    "id": "webapp:react:views",
+    "refs": {
+      "id": "UV_Login",
+      "version": "1740588768565"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/components/views/UV_Login.tsx",
+      "type": "text",
+      "size": 231,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_Login/empty.tsx",
+      "type": "text",
+      "size": 382,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_Login/1740588768565.tsx",
+      "type": "text",
+      "size": 3828,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_Login/meta.json",
+      "type": "text",
+      "size": 83,
+      "dependencies": false
+    }
+  ]
+}

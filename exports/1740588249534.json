@@ -1,0 +1,37 @@
+{
+  "timestamp": 1740588249534,
+  "operation": {
+    "id": "webapp:react:views",
+    "refs": {
+      "id": "UV_TeamManagement",
+      "version": "1740588096360"
+    }
+  },
+  "projectId": "ui-design",
+  "files": [
+    {
+      "path": "../../apps/ui-design/vitereact/src/components/views/UV_TeamManagement.tsx",
+      "type": "text",
+      "size": 240,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_TeamManagement/empty.tsx",
+      "type": "text",
+      "size": 409,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_TeamManagement/1740588096360.tsx",
+      "type": "text",
+      "size": 5861,
+      "dependencies": false
+    },
+    {
+      "path": "../../apps/ui-design/vitereact/src/_cofounder/generated/views/UV_TeamManagement/meta.json",
+      "type": "text",
+      "size": 53,
+      "dependencies": false
+    }
+  ]
+}
